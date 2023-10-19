@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="{{ URL::to('css/styles.css') }}">
     </head>
     <body class="antialiased">
-        @include('partials.header')
+        @include('partials.admin-header')
         <div class="container">
             @yield('content')
         </div>
