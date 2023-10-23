@@ -17,6 +17,8 @@ Route::get('/', [PostController::class,'getIndex'])->name('blog.index');
 
 Route::get('post/{id}', [PostController::class,'getPost'])->name('blog.post');
 
+Route::get('post/{id}/like', [PostController::class,'getLikePost'])->name('blog.post.like');
+
 Route::get('about', function(){
     return view('other.about');
 })->name('other.about');
@@ -27,6 +29,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('create', [PostController::class,'getAdminCreate'])->name('admin.create');
     
     Route::get('edit/{id}', [PostController::class,'getAdminEdit'])->name('admin.edit');
+
+    Route::get('delete/{id}', [PostController::class,'getAdminDelete'])->name('admin.delete');
     
     Route::post('create', [PostController::class,'postAdminCreate'])->name('admin.create');
     
