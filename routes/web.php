@@ -36,3 +36,9 @@ Route::group(['prefix' => 'admin'], function(){
     
     Route::post('edit', [PostController::class,'postAdminUpdate'])->name('admin.update');
 });
+Auth::routes();
+
+Route::post('login', [
+    'uses' => 'App\Http\Controllers\SigninController@signin',
+    'as' => 'auth.signin'
+]);
